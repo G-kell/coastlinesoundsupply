@@ -1,0 +1,525 @@
+/* ============================================================================
+   COASTLINE SOUND SUPPLY — DESIGN TOKENS
+   ============================================================================
+
+   READ THIS FIRST — you do not need to know CSS to use this file.
+
+   Every colour, font, size, spacing gap, corner radius, shadow, and
+   animation speed on the whole website is defined ONCE, right here, in
+   this file. No other CSS file is allowed to contain a raw value like
+   "#0f3b46" or "18px" — they all just say "use the token named
+   --color-brand" or "use the token named --space-4", and this file is
+   the only place that decides what those tokens actually equal.
+
+   That means: to restyle the entire site, you only ever edit THIS file.
+
+   There are two layers below:
+
+   1. PRIMITIVES — the raw palette and scale. Named for what they ARE.
+      e.g. --color-teal-600: #1b6d78;
+      You will mostly leave these alone, or replace a whole block with
+      one of the alternate palettes provided further down.
+
+   2. SEMANTIC TOKENS — what the site actually uses, named for what they
+      MEAN or DO. e.g. --color-brand, --color-text, --space-section-y.
+      Semantic tokens only ever point at primitives — they never contain
+      a raw value themselves. This layer is what every page, component,
+      and the styleguide actually consume.
+
+   --------------------------------------------------------------------------
+   HOW TO RECOLOUR THE ENTIRE SITE
+   --------------------------------------------------------------------------
+   Scroll to "1. PRIMITIVES" below. Find the block marked ACTIVE PALETTE.
+   Comment it out (wrap it in comment markers), then uncomment one of the
+   three ALTERNATE PALETTE blocks beneath it (remove its comment markers).
+   Save, refresh styleguide.html. Every page updates — nothing else to touch.
+   You can also hand-edit individual primitive values (e.g. just the accent)
+   without swapping the whole block.
+
+   --------------------------------------------------------------------------
+   HOW TO CHANGE THE FONTS / TYPE SCALE
+   --------------------------------------------------------------------------
+   Find "TYPOGRAPHY PRIMITIVES" below. The active font stacks are system
+   fonts (no downloads, no external requests). To try the alternate
+   display-font pairing, comment/uncomment the same way as the palettes.
+   To change how big headings are, edit the clamp() values in the
+   "SEMANTIC — TYPOGRAPHY SCALE" section — the first number is the
+   smallest (mobile) size, the last is the largest (desktop) size.
+
+   --------------------------------------------------------------------------
+   DARK MODE
+   --------------------------------------------------------------------------
+   The semantic layer is what makes dark mode possible with zero component
+   changes: every semantic token is redefined once inside the
+   prefers-color-scheme / [data-theme="dark"] blocks at the bottom of this
+   file, pointing at different primitives. Components never check "is it
+   dark mode" — they just use --color-surface etc. and it swaps for free.
+   ============================================================================ */
+
+:root {
+
+  /* ==========================================================================
+     1. PRIMITIVES
+     ========================================================================== */
+
+  /* --- Colour primitives — ACTIVE PALETTE: "Pacific Dusk" -----------------
+     Deep ocean navy + teal, sand & driftwood neutrals, sunset amber accent.
+     This is the default, premium-calm coastal PNW direction. */
+  --color-navy-950:  #0a1e26;
+  --color-navy-900:  #0f2b35;
+  --color-navy-800:  #123642;
+  --color-navy-700:  #17434f;
+  --color-navy-600:  #205363;
+  --color-navy-500:  #2c6b7d;
+
+  --color-teal-700:  #0f4a52;
+  --color-teal-600:  #146670;
+  --color-teal-500:  #1c8896;
+  --color-teal-400:  #3aa8b5;
+  --color-teal-300:  #7ecdd6;
+
+  --color-sand-100:  #faf6ee;
+  --color-sand-200:  #f2ead9;
+  --color-sand-300:  #e8dcc2;
+  --color-sand-400:  #d8c7a3;
+
+  --color-driftwood-300: #b9ac96;
+  --color-driftwood-400: #8f8271;
+  --color-driftwood-500: #6b6153;
+  --color-driftwood-600: #4a4338;
+
+  --color-amber-300: #f2c879;
+  --color-amber-400: #eab24e;
+  --color-amber-500: #dd9a2e;
+  --color-amber-600: #b97c1e;
+  --color-amber-700: #8f5f16;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-success-100: #e2f2e6;
+  --color-success-500: #2e7d4f;
+  --color-success-700: #1e5636;
+
+  --color-error-100: #fbe8e6;
+  --color-error-500: #b3402f;
+  --color-error-700: #832c1f;
+
+  /* --- ALTERNATE PALETTE 1 — "Late Tide" (darker, nightlife-leaning) ------
+     Deeper navy-blacks, saturated teal-cyan, hotter amber. Reads more
+     after-dark / DJ-forward. To use: comment out the ACTIVE PALETTE
+     block above, uncomment this one.
+  --color-navy-950:  #050c10;
+  --color-navy-900:  #071319;
+  --color-navy-800:  #0a1c24;
+  --color-navy-700:  #0e2731;
+  --color-navy-600:  #143644;
+  --color-navy-500:  #1c4a5c;
+
+  --color-teal-700:  #0a3138;
+  --color-teal-600:  #0f4750;
+  --color-teal-500:  #167f8c;
+  --color-teal-400:  #29b3c4;
+  --color-teal-300:  #6fe0ee;
+
+  --color-sand-100:  #efe6d6;
+  --color-sand-200:  #e3d5bd;
+  --color-sand-300:  #d2bf9d;
+  --color-sand-400:  #b8a077;
+
+  --color-driftwood-300: #9c8f78;
+  --color-driftwood-400: #756b59;
+  --color-driftwood-500: #524a3e;
+  --color-driftwood-600: #322c24;
+
+  --color-amber-300: #ffcf7a;
+  --color-amber-400: #ffb238;
+  --color-amber-500: #f3941a;
+  --color-amber-600: #cc7407;
+  --color-amber-700: #995604;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-success-100: #d9f0e0;
+  --color-success-500: #278a52;
+  --color-success-700: #145c34;
+
+  --color-error-100: #f9e2df;
+  --color-error-500: #c74a34;
+  --color-error-700: #8f2e1c;
+  ---------------------------------------------------------------------- */
+
+  /* --- ALTERNATE PALETTE 2 — "Editorial Linen" (lighter, editorial) -------
+     Softer ink instead of navy-black, warmer paper-white surfaces, a
+     muted clay accent instead of amber. Reads more print-magazine /
+     boutique-studio than "sound company." To use: comment out the
+     ACTIVE PALETTE block above, uncomment this one.
+  --color-navy-950:  #23303a;
+  --color-navy-900:  #2b3a45;
+  --color-navy-800:  #344653;
+  --color-navy-700:  #3e5361;
+  --color-navy-600:  #4c6472;
+  --color-navy-500:  #5c7684;
+
+  --color-teal-700:  #375f66;
+  --color-teal-600:  #457780;
+  --color-teal-500:  #5a939c;
+  --color-teal-400:  #7fadb4;
+  --color-teal-300:  #aecdd1;
+
+  --color-sand-100:  #fdfbf6;
+  --color-sand-200:  #f6f0e4;
+  --color-sand-300:  #ece2cc;
+  --color-sand-400:  #dccdab;
+
+  --color-driftwood-300: #c7bca6;
+  --color-driftwood-400: #a1937b;
+  --color-driftwood-500: #7c6f5a;
+  --color-driftwood-600: #564c3d;
+
+  --color-amber-300: #e8b98f;
+  --color-amber-400: #d99b68;
+  --color-amber-500: #c17f48;
+  --color-amber-600: #9c6535;
+  --color-amber-700: #764c27;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-success-100: #e6f0e2;
+  --color-success-500: #4c7d3a;
+  --color-success-700: #345626;
+
+  --color-error-100: #f5e7e2;
+  --color-error-500: #a8543a;
+  --color-error-700: #793a27;
+  ---------------------------------------------------------------------- */
+
+  /* --- ALTERNATE PALETTE 3 — "Regatta" (crisp, high-contrast nautical) ----
+     Cooler true-blue instead of teal, near-white surfaces, a punchy
+     flag-red-orange accent. More "marina / regatta signage" than moody
+     coastline. To use: comment out the ACTIVE PALETTE block above,
+     uncomment this one.
+  --color-navy-950:  #081426;
+  --color-navy-900:  #0b1d33;
+  --color-navy-800:  #0f2743;
+  --color-navy-700:  #143252;
+  --color-navy-600:  #1c4066;
+  --color-navy-500:  #275179;
+
+  --color-teal-700:  #0d3a63;
+  --color-teal-600:  #124c7c;
+  --color-teal-500:  #1c66a0;
+  --color-teal-400:  #3d87c2;
+  --color-teal-300:  #83b6de;
+
+  --color-sand-100:  #fbfcfe;
+  --color-sand-200:  #eef2f7;
+  --color-sand-300:  #dbe3ec;
+  --color-sand-400:  #bccbdb;
+
+  --color-driftwood-300: #a9b3bd;
+  --color-driftwood-400: #7e8b96;
+  --color-driftwood-500: #5b6670;
+  --color-driftwood-600: #3c454d;
+
+  --color-amber-300: #ffab8a;
+  --color-amber-400: #ff8a5c;
+  --color-amber-500: #f26a37;
+  --color-amber-600: #cc4f22;
+  --color-amber-700: #9c3a17;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-success-100: #dcefe2;
+  --color-success-500: #1e8a53;
+  --color-success-700: #125c37;
+
+  --color-error-100: #fbe4de;
+  --color-error-500: #c23e21;
+  --color-error-700: #8a2b17;
+  ---------------------------------------------------------------------- */
+
+
+  /* --- Typography primitives — ACTIVE PAIRING: "Coastal Serif" -----------
+     Display: a confident, warm serif for headings (system stack — no
+     downloads). Body: a clean, highly-legible system sans. */
+  --font-family-display: Iowan Old Style, Palatino Linotype, Palatino, Georgia, "Times New Roman", serif;
+  --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* --- ALTERNATE PAIRING — "Modern Grotesk" (bold sans/sans, more
+     nightlife / events-agency than heirloom-wedding). To use: comment
+     out the ACTIVE PAIRING above, uncomment this one.
+  --font-family-display: "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  ---------------------------------------------------------------------- */
+
+  /* To self-host real webfont FILES instead of system stacks:
+     1. Add .woff2 files under assets/fonts/
+     2. Uncomment and edit the @font-face rules below
+     3. Point --font-family-display / --font-family-body at the new
+        family name, keeping a system fallback after it. */
+  /*
+  @font-face {
+    font-family: "YourDisplayFont";
+    src: url("../fonts/your-display-font.woff2") format("woff2");
+    font-weight: 400 700;
+    font-display: swap;
+  }
+  */
+
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  --leading-tight:   1.1;
+  --leading-snug:    1.25;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-display: -0.01em;
+  --tracking-tight:   -0.01em;
+  --tracking-normal:  0em;
+  --tracking-wide:    0.04em;
+  --tracking-widest:  0.08em;
+
+  /* --- Spacing primitives (4px base unit) --------------------------------- */
+  --space-1:  0.25rem;  /*  4px */
+  --space-2:  0.5rem;   /*  8px */
+  --space-3:  0.75rem;  /* 12px */
+  --space-4:  1rem;     /* 16px */
+  --space-5:  1.25rem;  /* 20px */
+  --space-6:  1.5rem;   /* 24px */
+  --space-8:  2rem;     /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+
+  /* --- Radius primitives --------------------------------------------------- */
+  --radius-none: 0;
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   1rem;
+  --radius-xl:   1.5rem;
+  --radius-pill: 999px;
+
+  /* --- Shadow primitives ---------------------------------------------------
+     Built from navy so shadows read as "water shadow" not generic grey. */
+  --shadow-color: 16, 33, 41;
+  --shadow-sm: 0 1px 2px rgba(var(--shadow-color), 0.08);
+  --shadow-md: 0 4px 12px rgba(var(--shadow-color), 0.10);
+  --shadow-lg: 0 12px 32px rgba(var(--shadow-color), 0.16);
+  --shadow-xl: 0 24px 56px rgba(var(--shadow-color), 0.22);
+
+  /* --- Motion primitives ---------------------------------------------------- */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:      cubic-bezier(0, 0, 0.2, 1);
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);
+
+  /* --- Z-index primitives ---------------------------------------------------- */
+  --z-base:    0;
+  --z-header:  100;
+  --z-overlay: 200;
+  --z-modal:   300;
+  --z-toast:   400;
+
+  /* --- Border-width primitives ------------------------------------------- */
+  --border-width-hairline: 1px;
+  --border-width-thick:    2px;
+
+  /* --- Offset primitives (hover lift, off-screen positioning) ------------- */
+  --offset-hover-sm:  -1px;
+  --offset-hover-md:  -2px;
+  --offset-offscreen: -9999px;
+
+
+  /* ==========================================================================
+     2. SEMANTIC TOKENS — what components & pages actually use.
+     Defined ONLY in terms of primitives above. Never a raw value here.
+     ========================================================================== */
+
+  /* --- Colour: surfaces ---------------------------------------------------- */
+  --color-surface:         var(--color-sand-100);  /* page background */
+  --color-surface-raised:  var(--color-white);      /* cards, header, form panel */
+  --color-surface-sunken:  var(--color-sand-200);   /* alternating section bg */
+  --color-surface-inverse: var(--color-navy-900);   /* footer, dark bands */
+
+  /* --- Colour: text ---------------------------------------------------------- */
+  --color-text:          var(--color-navy-950);
+  --color-text-muted:    var(--color-driftwood-500);
+  --color-text-inverse:  var(--color-sand-100);
+  --color-text-on-brand: var(--color-white);
+
+  /* --- Colour: brand / accent ---------------------------------------------- */
+  --color-brand:         var(--color-teal-600);
+  --color-brand-hover:   var(--color-teal-700);
+  --color-brand-tint:    var(--color-teal-300);
+  --color-accent:        var(--color-amber-500);
+  --color-accent-hover:  var(--color-amber-600);
+  --color-accent-tint:   var(--color-amber-300);
+  --color-brand-gradient-end: var(--color-navy-700);
+
+  /* --- Colour: borders & focus --------------------------------------------- */
+  --color-border:        var(--color-driftwood-300);
+  --color-border-strong: var(--color-driftwood-400);
+  --color-border-inverse: rgba(250, 246, 238, 0.24);
+  --color-focus-ring:    var(--color-amber-500);
+
+  /* --- Colour: form / feedback states --------------------------------------- */
+  --color-success-bg:     var(--color-success-100);
+  --color-success-text:   var(--color-success-700);
+  --color-success-border: var(--color-success-500);
+  --color-error-bg:       var(--color-error-100);
+  --color-error-text:     var(--color-error-700);
+  --color-error-border:   var(--color-error-500);
+
+  /* --- Typography: family ---------------------------------------------------- */
+  --font-heading: var(--font-family-display);
+  --font-body:    var(--font-family-body);
+
+  /* --- Typography: fluid scale (clamp: min, preferred, max) ---------------
+     Preferred value scales with viewport width (vw) between the two. */
+  --text-display: clamp(2.75rem, 2.1rem + 3.2vw, 5rem);
+  --text-h1:      clamp(2.25rem, 1.85rem + 2vw, 3.5rem);
+  --text-h2:      clamp(1.75rem, 1.5rem + 1.25vw, 2.5rem);
+  --text-h3:      clamp(1.375rem, 1.2rem + 0.75vw, 1.75rem);
+  --text-h4:      clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem);
+  --text-lead:    clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem);
+  --text-body:    1rem;
+  --text-small:   0.875rem;
+  --text-caption: 0.75rem;
+
+  /* --- Typography: weight assignment ------------------------------------- */
+  --weight-heading: var(--weight-semibold);
+  --weight-body:    var(--weight-regular);
+  --weight-strong:  var(--weight-bold);
+
+  /* --- Typography: line-height assignment ------------------------------------ */
+  --leading-heading: var(--leading-tight);
+  --leading-body:    var(--leading-relaxed);
+  --leading-ui:      var(--leading-snug);
+
+  /* --- Layout ---------------------------------------------------------------- */
+  --container-max:    75rem;   /* 1200px — outer page width */
+  --container-narrow: 48rem;   /* 768px — forms, focused content */
+  --content-measure:  38rem;   /* ~62ch — comfortable reading line length */
+  --gutter:           var(--space-6);
+  --gutter-lg:        var(--space-10);
+  --space-section-y:  clamp(3.5rem, 3rem + 3vw, 7rem);
+  --space-stack:      var(--space-6);
+
+  /* --- Radii ------------------------------------------------------------------ */
+  --radius-card:  var(--radius-lg);
+  --radius-input: var(--radius-md);
+  --radius-btn:   var(--radius-pill);
+  --radius-badge: var(--radius-pill);
+  --radius-image: var(--radius-md);
+
+  /* --- Shadows ------------------------------------------------------------------ */
+  --shadow-card:      var(--shadow-md);
+  --shadow-card-hover: var(--shadow-lg);
+  --shadow-header:    var(--shadow-sm);
+  --shadow-overlay:   var(--shadow-xl);
+
+  /* --- Motion ------------------------------------------------------------------ */
+  --transition-fast: var(--duration-fast) var(--ease-standard);
+  --transition-base: var(--duration-base) var(--ease-standard);
+  --transition-slow: var(--duration-slow) var(--ease-standard);
+}
+
+/* ============================================================================
+   DARK MODE — semantic remap only. No component below this line ever
+   changes; only which primitive each semantic token points to changes.
+
+   Honoured two ways:
+   1. Automatically, via prefers-color-scheme, when the site hasn't been
+      told otherwise (no data-theme attribute set).
+   2. Explicitly, via <html data-theme="dark"> or data-theme="light">,
+      which always wins over the OS setting — this is what main.js's
+      theme toggle sets.
+   ============================================================================ */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-surface:         var(--color-navy-950);
+    --color-surface-raised:  var(--color-navy-900);
+    --color-surface-sunken:  var(--color-navy-800);
+    --color-surface-inverse: var(--color-sand-100);
+
+    --color-text:          var(--color-sand-100);
+    --color-text-muted:    var(--color-driftwood-300);
+    --color-text-inverse:  var(--color-navy-950);
+    --color-text-on-brand: var(--color-white);
+
+    --color-brand:        var(--color-teal-400);
+    --color-brand-hover:   var(--color-teal-300);
+    --color-brand-tint:    var(--color-teal-700);
+    --color-accent:        var(--color-amber-400);
+    --color-accent-hover:  var(--color-amber-300);
+    --color-accent-tint:   var(--color-amber-700);
+    --color-brand-gradient-end: var(--color-navy-500);
+
+    --color-border:        rgba(250, 246, 238, 0.16);
+    --color-border-strong: rgba(250, 246, 238, 0.28);
+    --color-border-inverse: var(--color-driftwood-400);
+    --color-focus-ring:    var(--color-amber-400);
+
+    --color-success-bg:     var(--color-navy-800);
+    --color-success-text:   #7fd9a0;
+    --color-success-border: var(--color-success-500);
+    --color-error-bg:       var(--color-navy-800);
+    --color-error-text:     #f2a996;
+    --color-error-border:   var(--color-error-500);
+
+    --shadow-color: 0, 0, 0;
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-surface:         var(--color-navy-950);
+  --color-surface-raised:  var(--color-navy-900);
+  --color-surface-sunken:  var(--color-navy-800);
+  --color-surface-inverse: var(--color-sand-100);
+
+  --color-text:          var(--color-sand-100);
+  --color-text-muted:    var(--color-driftwood-300);
+  --color-text-inverse:  var(--color-navy-950);
+  --color-text-on-brand: var(--color-white);
+
+  --color-brand:        var(--color-teal-400);
+  --color-brand-hover:   var(--color-teal-300);
+  --color-brand-tint:    var(--color-teal-700);
+  --color-accent:        var(--color-amber-400);
+  --color-accent-hover:  var(--color-amber-300);
+  --color-accent-tint:   var(--color-amber-700);
+
+  --color-border:        rgba(250, 246, 238, 0.16);
+  --color-border-strong: rgba(250, 246, 238, 0.28);
+  --color-border-inverse: var(--color-driftwood-400);
+  --color-focus-ring:    var(--color-amber-400);
+
+  --color-success-bg:     var(--color-navy-800);
+  --color-success-text:   #7fd9a0;
+  --color-success-border: var(--color-success-500);
+  --color-error-bg:       var(--color-navy-800);
+  --color-error-text:     #f2a996;
+  --color-error-border:   var(--color-error-500);
+
+  --shadow-color: 0, 0, 0;
+}
+
+:root[data-theme="light"] {
+  /* Explicit opt-back-into-light, overriding an OS-level dark preference.
+     Re-declares nothing extra — the default :root values above already
+     ARE the light theme, so this selector just needs to exist to win
+     the specificity/attribute battle against the dark media query. */
+}

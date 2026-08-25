@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Styleguide (internal) | Coastline Sound Supply</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%A8%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+  <!-- This page is intentionally NOT linked from nav, footer, or sitemap.xml.
+       It exists purely so you can preview the design system while you edit
+       tokens.css. Refresh this page after any tokens.css edit to see it
+       propagate everywhere at once. -->
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="index.html">
+        <svg class="logo__mark" viewBox="0 0 48 48" role="img" aria-hidden="true">
+          <circle class="logo__sun" cx="33" cy="14" r="6"></circle>
+          <path class="logo__wave" d="M3 28c4-6 10-6 14 0s10 6 14 0 10-6 14 0" fill="none" stroke-width="3" stroke-linecap="round"></path>
+          <path class="logo__wave" d="M3 37c4-6 10-6 14 0s10 6 14 0 10-6 14 0" fill="none" stroke-width="3" stroke-linecap="round"></path>
+        </svg>
+        <span>Styleguide</span>
+      </a>
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#colour">Colour</a></li>
+          <li><a class="nav__link" href="#type">Type</a></li>
+          <li><a class="nav__link" href="#spacing">Spacing</a></li>
+          <li><a class="nav__link" href="#components">Components</a></li>
+          <li><a class="nav__link" href="#form">Form</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__actions">
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
+        </button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span class="nav-toggle__icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="section" style="padding-bottom: var(--space-8);">
+      <div class="container">
+        <span class="badge badge--draft">Internal — not in nav, footer, or sitemap.xml</span>
+        <h1 style="margin-top: var(--space-4);">Coastline Sound Supply — Styleguide</h1>
+        <p class="text-lead">Every token and component on the site, rendered live. Edit <code>assets/css/tokens.css</code>, refresh this page — everything below (and every real page) updates together. Use the theme button at top right to check dark mode.</p>
+      </div>
+    </section>
+
+    <section class="section section--sunken" id="colour" style="padding-top: var(--space-8);">
+      <div class="container">
+        <h2>Colour</h2>
+        <p class="text-muted">Semantic tokens only — swap the primitive block in tokens.css and every swatch below changes.</p>
+
+        <h3 style="margin-top: var(--space-10);">Surfaces</h3>
+        <div class="swatch-grid" style="margin-top: var(--space-4);">
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-surface);"></div><div class="swatch__label">--color-surface</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-surface-raised);"></div><div class="swatch__label">--color-surface-raised</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-surface-sunken);"></div><div class="swatch__label">--color-surface-sunken</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-surface-inverse);"></div><div class="swatch__label">--color-surface-inverse</div></div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Text</h3>
+        <div class="swatch-grid" style="margin-top: var(--space-4);">
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-text);"></div><div class="swatch__label">--color-text</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-text-muted);"></div><div class="swatch__label">--color-text-muted</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-text-inverse);"></div><div class="swatch__label">--color-text-inverse</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-text-on-brand);"></div><div class="swatch__label">--color-text-on-brand</div></div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Brand &amp; accent</h3>
+        <div class="swatch-grid" style="margin-top: var(--space-4);">
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-brand);"></div><div class="swatch__label">--color-brand</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-brand-hover);"></div><div class="swatch__label">--color-brand-hover</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-brand-tint);"></div><div class="swatch__label">--color-brand-tint</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-accent);"></div><div class="swatch__label">--color-accent</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-accent-hover);"></div><div class="swatch__label">--color-accent-hover</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-accent-tint);"></div><div class="swatch__label">--color-accent-tint</div></div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Borders &amp; focus</h3>
+        <div class="swatch-grid" style="margin-top: var(--space-4);">
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-border);"></div><div class="swatch__label">--color-border</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-border-strong);"></div><div class="swatch__label">--color-border-strong</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-focus-ring);"></div><div class="swatch__label">--color-focus-ring</div></div>
+        </div>
+
+        <h3 style="margin-top: var(--space-10);">Form states</h3>
+        <div class="swatch-grid" style="margin-top: var(--space-4);">
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-success-bg);"></div><div class="swatch__label">--color-success-bg</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-success-text);"></div><div class="swatch__label">--color-success-text</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-error-bg);"></div><div class="swatch__label">--color-error-bg</div></div>
+          <div class="swatch"><div class="swatch__color" style="background: var(--color-error-text);"></div><div class="swatch__label">--color-error-text</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="type">
+      <div class="container">
+        <h2>Typography</h2>
+        <p class="text-muted">Fluid scale via clamp() — resize the window to see each specimen scale between its min and max.</p>
+
+        <div class="specimen">
+          <div class="text-display">Display type</div>
+          <div class="specimen__meta">--text-display · font-heading · weight-heading · leading-tight</div>
+        </div>
+        <div class="specimen">
+          <h1>Heading One</h1>
+          <div class="specimen__meta">--text-h1</div>
+        </div>
+        <div class="specimen">
+          <h2>Heading Two</h2>
+          <div class="specimen__meta">--text-h2</div>
+        </div>
+        <div class="specimen">
+          <h3>Heading Three</h3>
+          <div class="specimen__meta">--text-h3</div>
+        </div>
+        <div class="specimen">
+          <h4>Heading Four</h4>
+          <div class="specimen__meta">--text-h4</div>
+        </div>
+        <div class="specimen">
+          <p class="text-lead no-measure">Lead paragraph — used under hero titles and section headers to add a little more weight than body text.</p>
+          <div class="specimen__meta">--text-lead</div>
+        </div>
+        <div class="specimen">
+          <p class="no-measure">Body text — this is the default paragraph style used throughout the site, set in --font-body at --text-body with --leading-relaxed for comfortable reading.</p>
+          <div class="specimen__meta">--text-body · font-body · leading-relaxed</div>
+        </div>
+        <div class="specimen">
+          <p class="text-small no-measure">Small text — used for card metadata, hints, and table cells.</p>
+          <div class="specimen__meta">--text-small</div>
+        </div>
+        <div class="specimen">
+          <p class="text-caption no-measure">Caption / eyebrow text</p>
+          <div class="specimen__meta">--text-caption · tracking-wide · uppercase</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sunken" id="spacing">
+      <div class="container">
+        <h2>Spacing scale</h2>
+        <div class="stack" style="margin-top: var(--space-6);">
+          <div class="cluster"><div style="width: var(--space-1); height: var(--space-4); background: var(--color-brand);"></div><span class="text-small">--space-1 (4px)</span></div>
+          <div class="cluster"><div style="width: var(--space-2); height: var(--space-4); background: var(--color-brand);"></div><span class="text-small">--space-2 (8px)</span></div>
+          <div class="cluster"><div style="width: var(--space-3); height: var(--space-4); background: var(--color-brand);"></div><span class="text-small">--space-3 (12px)</span></div>
+          <div class="cluster"><div style="width: var(--space-4); height: var(--space-4); background: var(--color-brand);"></div><span class="text-small">--space-4 (16px)</span></div>
+          <div class="cluster"><div style="width: var(--space-6); height: var(--space-4); background: var(--color-brand);"></div><span class="text-small">--space-6 (24px)</span></div>
+          <div class="cluster"><div style="width: var(--space-8); height: var(--space-4); background: var(--color-brand);"></div><span class="text-small">--space-8 (32px)</span></div>
+          <div class="cluster"><div style="width: var(--space-12); height: var(--space-4); background: var(--color-brand);"></div><span class="text-small">--space-12 (48px)</span></div>
+          <div class="cluster"><div style="width: var(--space-16); height: var(--space-4); background: var(--color-brand);"></div><span class="text-small">--space-16 (64px)</span></div>
+          <div class="cluster"><div style="width: var(--space-24); height: var(--space-4); background: var(--color-brand);"></div><span class="text-small">--space-24 (96px)</span></div>
+        </div>
+
+        <h2 style="margin-top: var(--space-16);">Radii &amp; shadow</h2>
+        <div class="grid grid--4" style="margin-top: var(--space-6);">
+          <div style="background: var(--color-surface-raised); border-radius: var(--radius-sm); padding: var(--space-6); box-shadow: var(--shadow-sm);">--radius-sm / --shadow-sm</div>
+          <div style="background: var(--color-surface-raised); border-radius: var(--radius-md); padding: var(--space-6); box-shadow: var(--shadow-md);">--radius-md / --shadow-md</div>
+          <div style="background: var(--color-surface-raised); border-radius: var(--radius-card); padding: var(--space-6); box-shadow: var(--shadow-card);">--radius-card / --shadow-card</div>
+          <div style="background: var(--color-surface-raised); border-radius: var(--radius-xl); padding: var(--space-6); box-shadow: var(--shadow-lg);">--radius-xl / --shadow-lg</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="components">
+      <div class="container">
+        <h2>Buttons</h2>
+        <div class="cluster" style="margin-top: var(--space-6);">
+          <a class="btn btn--primary" href="#">Primary</a>
+          <a class="btn btn--secondary" href="#">Secondary</a>
+          <button class="btn btn--ghost" type="button">Ghost</button>
+          <button class="btn btn--primary btn--sm" type="button">Primary / small</button>
+          <button class="btn btn--primary" type="button" disabled>Disabled</button>
+        </div>
+        <div class="cta-band" style="margin-top: var(--space-6);">
+          <a class="btn btn--on-inverse" href="#">On inverse</a>
+        </div>
+
+        <h2 style="margin-top: var(--space-16);">Badges</h2>
+        <div class="cluster" style="margin-top: var(--space-6);">
+          <span class="badge">Default</span>
+          <span class="badge badge--accent">Accent</span>
+          <span class="badge badge--muted">Muted</span>
+          <span class="badge badge--draft">Draft</span>
+        </div>
+
+        <h2 style="margin-top: var(--space-16);">Cards</h2>
+        <div class="grid grid--3" style="margin-top: var(--space-6);">
+          <div class="card">
+            <div class="card__body">
+              <span class="badge">Rental</span>
+              <h3 class="card__title">Default card</h3>
+              <p class="text-muted">Hover to see the shadow/lift transition.</p>
+              <div class="card__footer"><a class="btn btn--secondary btn--sm" href="#">Action</a></div>
+            </div>
+          </div>
+          <div class="card card--featured">
+            <div class="card__body">
+              <span class="badge badge--accent">Featured</span>
+              <h3 class="card__title">Featured card</h3>
+              <p class="text-muted">Uses --color-accent as a border to stand out in a set.</p>
+              <div class="card__footer"><a class="btn btn--primary btn--sm" href="#">Action</a></div>
+            </div>
+          </div>
+          <div class="region-card">
+            <span class="badge badge--muted">Region</span>
+            <h3 class="card__title" style="margin-top: var(--space-3);">Region card</h3>
+            <div class="region-card__towns">
+              <span class="badge badge--muted">Town A</span>
+              <span class="badge badge--muted">Town B</span>
+            </div>
+          </div>
+        </div>
+
+        <h2 style="margin-top: var(--space-16);">Placeholder photos</h2>
+        <div class="grid grid--4" style="margin-top: var(--space-6);">
+          <div class="placeholder-photo placeholder-photo--1x1" role="img" aria-label="Placeholder square image"><span class="placeholder-photo__caption">1:1</span></div>
+          <div class="placeholder-photo placeholder-photo--4x5" role="img" aria-label="Placeholder portrait image"><span class="placeholder-photo__caption">4:5</span></div>
+          <div class="placeholder-photo placeholder-photo--3x2" role="img" aria-label="Placeholder landscape image"><span class="placeholder-photo__caption">3:2</span></div>
+          <div class="placeholder-photo placeholder-photo--16x9" role="img" aria-label="Placeholder widescreen image"><span class="placeholder-photo__caption">16:9</span></div>
+        </div>
+
+        <h2 style="margin-top: var(--space-16);">Avatar placeholder</h2>
+        <div class="cluster" style="margin-top: var(--space-6);">
+          <div class="avatar-placeholder" aria-hidden="true">G</div>
+          <div class="avatar-placeholder" aria-hidden="true">D</div>
+        </div>
+
+        <h2 style="margin-top: var(--space-16);">FAQ / accordion</h2>
+        <div class="faq" style="margin-top: var(--space-6); max-width: var(--container-narrow);">
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="sg-faq-1" id="sg-faq-1-btn">
+              Sample question one
+              <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq__answer" id="sg-faq-1" role="region" aria-labelledby="sg-faq-1-btn">
+              <div class="faq__answer-inner"><p class="no-measure">This is the answer content — max-height animates open on click, wired by main.js.</p></div>
+            </div>
+          </div>
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false" aria-controls="sg-faq-2" id="sg-faq-2-btn">
+              Sample question two
+              <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <div class="faq__answer" id="sg-faq-2" role="region" aria-labelledby="sg-faq-2-btn">
+              <div class="faq__answer-inner"><p class="no-measure">Second answer, same component.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <h2 style="margin-top: var(--space-16);">Table</h2>
+        <div class="table-scroll" style="margin-top: var(--space-6);">
+          <table class="table">
+            <thead><tr><th scope="col">Feature</th><th scope="col">Package A</th><th scope="col">Package B</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Hours</th><td>4</td><td>8</td></tr>
+              <tr><th scope="row">Included</th><td><span class="table__check">✓</span></td><td><span class="table__dash">—</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sunken" id="form">
+      <div class="container container--narrow">
+        <h2>Form states</h2>
+        <p class="text-muted">The same <code>.form</code> component used on the Contact page, shown here with a valid field, an invalid field, and both status banners.</p>
+
+        <form class="form" style="margin-top: var(--space-6);" onsubmit="return false;">
+          <div class="form__row form__row--2">
+            <div class="form__field">
+              <label class="form__label" for="sg-name">Default field</label>
+              <input class="form__input" type="text" id="sg-name" placeholder="Type something">
+            </div>
+            <div class="form__field" data-invalid="true">
+              <label class="form__label" for="sg-email">Invalid field</label>
+              <input class="form__input" type="email" id="sg-email" aria-describedby="sg-email-error" value="not-an-email">
+              <span class="form__error" id="sg-email-error" role="alert">Please enter a valid email address.</span>
+            </div>
+          </div>
+          <div class="form__status form__status--success" data-visible="true" style="margin-top: var(--space-6);">Thanks — your enquiry is in. We reply within 1 business day.</div>
+          <div class="form__status form__status--error" data-visible="true" style="margin-top: var(--space-4);">Something went wrong sending that. Please try again, or email us directly below.</div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Dark mode</h2>
+        <p class="text-muted">Toggle the theme button in the header above, or your OS-level appearance setting — every section on this page (and every real page) remaps automatically. No component CSS changes between light and dark; only the semantic token values in tokens.css do.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

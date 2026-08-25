@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact &amp; Get a Quote | Coastline Sound Supply</title>
+  <meta name="description" content="Request a quote for sound rental, DJ services, or both. Tell us your date, venue, and guest count — we typically reply within 1 business day.">
+  <link rel="canonical" href="https://www.coastlinesoundsupply.ca/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Coastline Sound Supply">
+  <meta property="og:title" content="Contact &amp; Get a Quote | Coastline Sound Supply">
+  <meta property="og:description" content="Request a quote for sound rental, DJ services, or both.">
+  <meta property="og:url" content="https://www.coastlinesoundsupply.ca/contact.html">
+  <meta property="og:image" content="https://www.coastlinesoundsupply.ca/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact &amp; Get a Quote | Coastline Sound Supply">
+  <meta name="twitter:description" content="Request a quote for sound rental, DJ services, or both.">
+  <meta name="twitter:image" content="https://www.coastlinesoundsupply.ca/assets/img/og-image.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%8A%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+<!-- include:header -->
+  <main id="main">
+
+    <section class="hero" style="padding-bottom: var(--space-8);">
+      <div class="container container--narrow" style="text-align: center;">
+        <h1>Get a Quote</h1>
+        <p class="text-lead">Tell us about your event. Only your name and a way to reach you are required — everything else helps us put together a more accurate quote.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container container--narrow">
+        <form class="form" data-form="lead" novalidate>
+
+          <!-- Honeypot — hidden from real visitors, left blank by them; a
+               filled value means a bot submitted the form. -->
+          <div class="form__honeypot" aria-hidden="true">
+            <label for="field-company">Company (leave this blank)</label>
+            <input type="text" id="field-company" name="company" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form__row form__row--2">
+            <div class="form__field">
+              <label class="form__label" for="field-name">Name <span class="form__required" aria-hidden="true">*</span></label>
+              <input class="form__input" type="text" id="field-name" name="name" data-required="true" aria-describedby="error-name" required>
+              <span class="form__error" id="error-name" role="alert">Please enter your name.</span>
+            </div>
+            <div class="form__field" data-contact-check>
+              <label class="form__label" for="field-email">Email</label>
+              <input class="form__input" type="email" id="field-email" name="email" aria-describedby="error-email">
+              <span class="form__error" id="error-email" role="alert">Please enter a valid email, or a phone number below.</span>
+            </div>
+          </div>
+
+          <div class="form__row form__row--2">
+            <div class="form__field">
+              <label class="form__label" for="field-phone">Phone</label>
+              <input class="form__input" type="tel" id="field-phone" name="phone" autocomplete="tel">
+              <span class="form__hint">A phone number works too, if you'd rather skip email.</span>
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="field-date">Event date</label>
+              <input class="form__input" type="date" id="field-date" name="event_date">
+            </div>
+          </div>
+
+          <div class="form__row form__row--2">
+            <div class="form__field">
+              <label class="form__label" for="field-event-type">Event type</label>
+              <select class="form__select" id="field-event-type" name="event_type">
+                <option value="">Select one</option>
+                <option value="Wedding">Wedding</option>
+                <option value="Corporate">Corporate</option>
+                <option value="Private party">Private party</option>
+                <option value="Community / non-profit">Community / non-profit</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="field-region">Region</label>
+              <select class="form__select" id="field-region" name="region">
+                <option value="">Select one</option>
+                <option value="Vancouver Island">Vancouver Island</option>
+                <option value="Lower Mainland">Lower Mainland</option>
+                <option value="Other">Other / not sure</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form__row form__row--2">
+            <div class="form__field">
+              <label class="form__label" for="field-venue">Venue or town</label>
+              <input class="form__input" type="text" id="field-venue" name="venue">
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="field-guests">Guest count</label>
+              <input class="form__input" type="number" min="0" id="field-guests" name="guest_count">
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <span class="form__label">Services interested in</span>
+              <div class="form__checkbox-group" role="group" aria-label="Services interested in">
+                <label class="form__checkbox">
+                  <input type="radio" name="services" value="Rental"> Sound rental
+                </label>
+                <label class="form__checkbox">
+                  <input type="radio" name="services" value="DJ"> DJ services
+                </label>
+                <label class="form__checkbox">
+                  <input type="radio" name="services" value="Both"> Both
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label class="form__label" for="field-package">Package of interest</label>
+              <input class="form__input" type="text" id="field-package" name="package" placeholder="e.g. Coastline Complete">
+              <span class="form__hint">Pre-filled automatically if you arrived from a package page.</span>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label class="form__label" for="field-message">Message</label>
+              <textarea class="form__textarea" id="field-message" name="message" placeholder="Anything else we should know — timeline, venue restrictions, must-play songs?"></textarea>
+            </div>
+          </div>
+
+          <div class="form__submit-row">
+            <button class="btn btn--primary" type="submit" data-form-submit>Send Enquiry</button>
+            <span class="text-small text-muted">We reply <span data-site="responseTime">within 1 business day</span>.</span>
+          </div>
+
+          <div class="form__status" data-form-status role="status" aria-live="polite" tabindex="-1"></div>
+
+          <p class="form__fallback" data-form-fallback hidden>
+            Prefer email? Reach us directly at
+            <a href="mailto:hello@example.com" data-site-href="mailto:{{email}}"><span data-site="email">hello@example.com</span></a>.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section section--sunken">
+      <div class="container">
+        <div class="section__header section__header--center">
+          <h2>Other ways to reach us</h2>
+        </div>
+        <div class="grid grid--3">
+          <div class="card">
+            <div class="card__body" style="text-align: center;">
+              <h3 class="card__title">Email</h3>
+              <p><a href="mailto:hello@example.com" data-site-href="mailto:{{email}}"><span data-site="email">hello@example.com</span></a></p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__body" style="text-align: center;">
+              <h3 class="card__title">Phone</h3>
+              <p><a href="tel:+12505550142" data-site-href="tel:{{phone}}"><span data-site="phoneDisplay">(250) 555-0142</span></a></p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__body" style="text-align: center;">
+              <h3 class="card__title">Instagram</h3>
+              <p><a href="https://instagram.com/coastlinesoundsupply" data-site-href="{{instagramUrl}}" target="_blank" rel="noopener"><span data-site="instagramHandle">@coastlinesoundsupply</span></a></p>
+            </div>
+          </div>
+        </div>
+        <p class="text-muted" style="text-align: center; margin-inline: auto; margin-top: var(--space-8);">We typically reply <span data-site="responseTime">within 1 business day</span>.</p>
+      </div>
+    </section>
+
+  </main>
+
+<!-- include:footer -->
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

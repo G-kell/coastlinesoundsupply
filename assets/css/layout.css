@@ -1,0 +1,125 @@
+/* ============================================================================
+   LAYOUT — containers, grid, section rhythm.
+   All values are tokens from tokens.css.
+   ============================================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+.section {
+  padding-block: var(--space-section-y);
+}
+
+.section--sunken {
+  background-color: var(--color-surface-sunken);
+}
+
+.section--inverse {
+  background-color: var(--color-surface-inverse);
+  color: var(--color-text-inverse);
+}
+
+.section--inverse h1,
+.section--inverse h2,
+.section--inverse h3,
+.section--inverse h4 {
+  color: var(--color-text-inverse);
+}
+
+.section--inverse .text-lead,
+.section--inverse .text-muted {
+  color: var(--color-border-inverse);
+}
+
+.section__header {
+  max-width: var(--content-measure);
+  margin-bottom: var(--space-10);
+}
+
+.section__header--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.stack > * + * {
+  margin-top: var(--space-stack);
+}
+
+.stack--sm > * + * {
+  margin-top: var(--space-3);
+}
+
+.stack--lg > * + * {
+  margin-top: var(--space-10);
+}
+
+/* --- Grid ------------------------------------------------------------------ */
+.grid {
+  display: grid;
+  gap: var(--gutter);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid--3 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid--4 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 40rem) {
+  .grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 60rem) {
+  .grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .grid--4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.split {
+  display: grid;
+  gap: var(--gutter-lg);
+  align-items: center;
+}
+
+@media (min-width: 60rem) {
+  .split {
+    grid-template-columns: 1fr 1fr;
+  }
+  .split--reverse {
+    direction: rtl;
+  }
+  .split--reverse > * {
+    direction: ltr;
+  }
+}
+
+/* --- Scroll safety: nothing on the site may cause horizontal scroll ------ */
+html, body {
+  overflow-x: hidden;
+}
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
