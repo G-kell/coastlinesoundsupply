@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.coastlinesoundsupply.ca/index.html</loc>
+    <loc>https://coastlinesoundsupply.com/index.html</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.coastlinesoundsupply.ca/packages.html</loc>
+    <loc>https://coastlinesoundsupply.com/packages.html</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.coastlinesoundsupply.ca/weddings.html</loc>
+    <loc>https://coastlinesoundsupply.com/weddings.html</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.coastlinesoundsupply.ca/events.html</loc>
+    <loc>https://coastlinesoundsupply.com/events.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.coastlinesoundsupply.ca/service-areas.html</loc>
+    <loc>https://coastlinesoundsupply.com/service-areas.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.coastlinesoundsupply.ca/about.html</loc>
+    <loc>https://coastlinesoundsupply.com/about.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.coastlinesoundsupply.ca/contact.html</loc>
+    <loc>https://coastlinesoundsupply.com/contact.html</loc>
     <priority>0.8</priority>
   </url>
 </urlset>
