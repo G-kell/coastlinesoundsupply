@@ -19,7 +19,8 @@ This README is written for you (not a developer). It covers:
 8. [Wiring up the enquiry form](#wiring-up-the-enquiry-form)
 9. [Changing the header or footer](#changing-the-header-or-footer)
 10. [Dark mode](#dark-mode)
-11. [Before you launch — full placeholder checklist](#before-you-launch--full-placeholder-checklist)
+11. [Optimizing for AI search & AI agents](#optimizing-for-ai-search--ai-agents)
+12. [Before you launch — full placeholder checklist](#before-you-launch--full-placeholder-checklist)
 
 ---
 
@@ -314,6 +315,60 @@ two-layer token system. If you want to design a different dark palette
 than the default, edit the two `dark` blocks near the bottom of
 `tokens.css` (the `@media (prefers-color-scheme: dark)` one and the
 `:root[data-theme="dark"]` one — keep them identical to each other).
+
+---
+
+## Optimizing for AI search & AI agents
+
+Beyond traditional SEO (unique meta/OG tags per page, one `sitemap.xml`,
+one `robots.txt`), the site includes a few things aimed specifically at
+generative answer engines (ChatGPT, Perplexity, Google AI Overviews) and
+AI agents that plan or compare vendors on someone's behalf:
+
+- **`FAQPage` structured data** on `src/pages/weddings.html` — the 5
+  wedding FAQ items, mirrored into `schema.org` JSON-LD. This is the
+  type of structured data most reliably quoted verbatim by AI answer
+  engines.
+- **`Service` structured data** on `src/pages/packages.html` — one
+  entry per package tier, plus an `Organization` entity tying the
+  business together. Deliberately typed as `Service`, not `Offer` —
+  `Offer` is built around a `price`, which this site intentionally
+  doesn't publish; forcing a priceless `Offer` is exactly the kind of
+  structured-data/visible-content mismatch that gets markup ignored.
+- **`<lastmod>` dates in `sitemap.xml`** — a freshness signal several
+  crawlers (AI ones included) use. **Update the date by hand** on any
+  page you meaningfully change — there's no automation for this, and
+  trying to auto-detect "meaningful change" would be more fragile than
+  a habit for a 9-page site.
+- **`robots.txt` explicitly names the major AI crawlers** (`GPTBot`,
+  `ClaudeBot`, `Google-Extended`, `PerplexityBot`, `OAI-SearchBot`,
+  `CCBot`, `Applebot-Extended`), each allowed — a deliberate choice to
+  maximize visibility in AI answers, accepting that content can be used
+  as training data or summarized without a click-through. If you ever
+  want to reconsider that trade-off for a specific bot, edit its block
+  in `robots.txt` — just keep the `Disallow: /styleguide.html` line in
+  any block you add or edit, since a named `User-agent` block is
+  matched exclusively and ignores the wildcard block's rules entirely.
+- **`llms.txt`** at the project root — a plain-markdown summary of the
+  business aimed at LLMs, in the same spirit as `sitemap.xml` but
+  written for language models rather than search crawlers. This is an
+  emerging, **not yet a universal standard** — some AI crawlers
+  reportedly look for it, others don't yet. Low cost to maintain given
+  the site's size, so it's included anyway.
+
+### The risk specific to this site right now
+
+Structured data and `llms.txt` are far "stickier" than regular on-page
+text: an AI system can cache, embed, or quote these facts to an end
+user long after the real site changes, without necessarily re-crawling
+first. A human visitor sees the `Draft` badge on a package card and
+understands the context; an AI summarizer typically strips that framing
+and presents "Coastline Essentials includes X, Y, Z" as settled fact.
+**Every new schema block and `llms.txt` line above is written to
+reflect that these specifics are drafts** — but the real fix is
+finishing the [placeholder checklist](#before-you-launch--full-placeholder-checklist)
+(real package names/inclusions, real bios, real phone number) before
+this content is likely to see meaningful AI-crawler traffic.
 
 ---
 

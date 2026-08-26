@@ -28,7 +28,7 @@ DIST = ROOT / "dist"
 # Static files/folders copied through to dist/ unchanged — these live at
 # the repo root because they are not templated and are not duplicated
 # anywhere, so there's nothing for this build step to do for them.
-PASSTHROUGH = ["assets", "sitemap.xml", "robots.txt", ".nojekyll", "CNAME"]
+PASSTHROUGH = ["assets", "sitemap.xml", "robots.txt", "llms.txt", ".nojekyll", "CNAME"]
 
 INCLUDE_PATTERN = re.compile(r"<!--\s*include:(\w+)\s*-->")
 

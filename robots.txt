@@ -2,4 +2,37 @@ User-agent: *
 Allow: /
 Disallow: /styleguide.html
 
+# Explicitly allowed AI crawlers/agents (deliberate choice — this business
+# wants visibility in AI answer engines and AI vendor-planning agents).
+# Each block repeats the styleguide disallow: a named User-agent block
+# is matched exclusively, ignoring the wildcard block above, so it must
+# repeat any disallow rules that should still apply.
+User-agent: GPTBot
+Allow: /
+Disallow: /styleguide.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /styleguide.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /styleguide.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /styleguide.html
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /styleguide.html
+
+User-agent: CCBot
+Allow: /
+Disallow: /styleguide.html
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /styleguide.html
+
 Sitemap: https://coastlinesoundsupply.com/sitemap.xml
