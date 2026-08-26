@@ -36,8 +36,9 @@ window.SITE_CONFIG = {
   },
 
   // --- Lead form --------------------------------------------------------------
-  // PLACEHOLDER — paste your form endpoint URL here (Formspree, Web3Forms,
-  // Basin, etc). Leave blank ("") to show the mailto: fallback instead of a
-  // broken submit button. See README.md, "Wiring up the enquiry form".
-  formEndpoint: ""
+  // Wired up to Web3Forms — the access key itself lives as a hidden field
+  // directly in contact.html's form (Web3Forms keys are public/client-side
+  // by design). Leave this blank ("") to show the mailto: fallback instead
+  // of a broken submit button. See README.md, "Wiring up the enquiry form".
+  formEndpoint: "https://api.web3forms.com/submit"
 };

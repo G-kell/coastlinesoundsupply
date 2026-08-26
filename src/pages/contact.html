@@ -37,6 +37,12 @@
       <div class="container container--narrow">
         <form class="form" data-form="lead" novalidate>
 
+          <!-- Web3Forms access key — public/client-side by design, same as a
+               reCAPTCHA site key. Get your own at https://web3forms.com/ if
+               you ever need to change where submissions go. -->
+          <input type="hidden" name="access_key" value="9b150eac-aa2c-471e-82ed-f92630278ab6">
+          <input type="hidden" name="subject" value="New enquiry — Coastline Sound Supply">
+
           <!-- Honeypot — hidden from real visitors, left blank by them; a
                filled value means a bot submitted the form. -->
           <div class="form__honeypot" aria-hidden="true">

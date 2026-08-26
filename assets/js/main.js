@@ -204,12 +204,18 @@
         body: new FormData(form)
       })
         .then(function (response) {
-          if (response.ok) {
-            showStatus("success");
-            form.reset();
-          } else {
-            showStatus("error");
-          }
+          return response.json().catch(function () { return null; }).then(function (body) {
+            // Some providers return HTTP 200 even for a rejected submission,
+            // signalling failure only via a `success: false` body field —
+            // so check both, not just the HTTP status.
+            var succeeded = response.ok && (!body || body.success !== false);
+            if (succeeded) {
+              showStatus("success");
+              form.reset();
+            } else {
+              showStatus("error");
+            }
+          });
         })
         .catch(function () {
           showStatus("error");
