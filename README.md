@@ -314,21 +314,25 @@ Contact page in case JavaScript fails — if you change a value in
 but it's worth doing a find-and-replace across the project for the old
 value so a JS-disabled visitor sees the same thing.
 
-| What | File & line | Current placeholder |
+| What | File & line | Status |
 |---|---|---|
-| Email | `assets/js/site-config.js:18` | `hello@example.com` |
-| Phone (tel: link format) | `assets/js/site-config.js:19` | `+12505550142` |
-| Phone (human-readable) | `assets/js/site-config.js:20` | `(250) 555-0142` |
-| Instagram handle | `assets/js/site-config.js:21` | `@coastlinesoundsupply` |
-| Instagram URL | `assets/js/site-config.js:22` | `https://instagram.com/coastlinesoundsupply` |
-| Form endpoint | `assets/js/site-config.js:42` | *(blank — see [Wiring up the enquiry form](#wiring-up-the-enquiry-form))* |
+| Email | `assets/js/site-config.js:18` | ✅ Real: `hello@coastlinesoundsupply.com` |
+| Phone (tel: link format) | `assets/js/site-config.js:19` | Placeholder: `+12505550142` |
+| Phone (human-readable) | `assets/js/site-config.js:20` | Placeholder: `(250) 555-0142` |
+| Instagram handle | `assets/js/site-config.js:21` | Placeholder: `@coastlinesoundsupply` |
+| Instagram URL | `assets/js/site-config.js:22` | Placeholder: `https://instagram.com/coastlinesoundsupply` |
+| Form endpoint | `assets/js/site-config.js:42` | Blank — see [Wiring up the enquiry form](#wiring-up-the-enquiry-form) |
 
-The same three contact values (email, phone, Instagram) also appear as
-plain hard-coded text inside **`src/partials/footer.html`** and
-**`src/pages/contact.html`**, as the no-JS fallback — search the
-project for `hello@example.com`, `555-0142`, and `coastlinesoundsupply`
-(the Instagram handle) to find every instance if you want to replace
-them by hand too.
+The same contact values also appear as plain hard-coded text inside
+**`src/partials/footer.html`** and **`src/pages/contact.html`**, as the
+no-JS fallback — these were updated at the same time as the email
+address above. If you change a value in `site-config.js` again later,
+search the project for the old value to find every fallback instance to
+update too.
+
+Email is now wired up to `hello@coastlinesoundsupply.com`, forwarding to
+Gmail via ImprovMX (see DNS records for the `MX`/`TXT` setup) — phone and
+Instagram are still placeholders.
 
 ### Domain name
 

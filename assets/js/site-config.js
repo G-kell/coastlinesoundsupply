@@ -15,7 +15,7 @@ window.SITE_CONFIG = {
   businessName: "Coastline Sound Supply",
 
   // --- Contact -------------------------------------------------------------
-  email: "hello@example.com",           // PLACEHOLDER — real inbox goes here
+  email: "hello@coastlinesoundsupply.com",
   phone: "+12505550142",                 // PLACEHOLDER — E.164 format, used for tel: links
   phoneDisplay: "(250) 555-0142",        // PLACEHOLDER — human-readable, shown on the page
   instagramHandle: "@coastlinesoundsupply", // PLACEHOLDER
