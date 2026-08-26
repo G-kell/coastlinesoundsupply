@@ -235,7 +235,8 @@
   padding: var(--space-3) var(--space-2);
   font-weight: var(--weight-medium);
   color: var(--color-text);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
 }
 
 .nav__link:hover {
@@ -244,7 +245,8 @@
 }
 
 .nav__link[aria-current="page"] {
-  color: var(--color-brand);
+  background-color: var(--color-brand-tint);
+  color: var(--color-text);
   font-weight: var(--weight-strong);
 }
 
