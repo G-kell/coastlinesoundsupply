@@ -284,6 +284,22 @@
         }
       }
 
+      // hCaptcha (Web3Forms spam protection) — only enforced if the widget
+      // is actually present on the page (it renders asynchronously via
+      // Web3Forms' client script, so this only runs at submit time).
+      var captchaWrap = formEl.querySelector("[data-captcha-check]");
+      if (captchaWrap) {
+        var captchaResponse = formEl.querySelector('textarea[name="h-captcha-response"]');
+        var captchaComplete = captchaResponse && captchaResponse.value.trim() !== "";
+        if (!captchaComplete) {
+          valid = false;
+          captchaWrap.setAttribute("data-invalid", "true");
+          if (!firstInvalid) firstInvalid = captchaWrap;
+        } else {
+          captchaWrap.removeAttribute("data-invalid");
+        }
+      }
+
       if (!valid && firstInvalid) {
         firstInvalid.focus();
       }

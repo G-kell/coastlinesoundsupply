@@ -245,6 +245,28 @@ Check your form provider's dashboard to confirm the submission arrived.
 submit button will show an inline message pointing people to the
 `mailto:` link instead, so you never ship a form that silently fails.
 
+This site is currently wired up to **Web3Forms**, with the access key
+placed directly as a hidden field in `src/pages/contact.html` (Web3Forms
+keys are meant to be public/client-side, like a reCAPTCHA site key — not
+a secret to hide).
+
+### Spam protection (hCaptcha)
+
+`src/pages/contact.html` also includes Web3Forms' hCaptcha integration:
+a `<div class="h-captcha" data-captcha="true">` in the form, and
+`<script src="https://web3forms.com/client/script.js">` near the end of
+the page, which is the only place on the site that loads an external
+(non-self-hosted) script — a deliberate, documented exception to the
+"no external requests" rule, since Web3Forms requires it for spam
+protection. It uses Web3Forms' shared free-plan sitekey, so no separate
+hCaptcha account is needed. `main.js` also checks client-side that the
+captcha was completed before allowing submission, so a visitor gets an
+inline error instead of a silent server-side rejection.
+
+**One dashboard setting only you can flip:** log into your Web3Forms
+account and enable hCaptcha for this form — until you do, the widget
+displays but Web3Forms may not actually require/verify it server-side.
+
 ---
 
 ## Changing the header or footer

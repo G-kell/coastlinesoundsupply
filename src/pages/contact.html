@@ -141,6 +141,11 @@
             </div>
           </div>
 
+          <div class="form__field form__captcha" data-captcha-check>
+            <div class="h-captcha" data-captcha="true"></div>
+            <span class="form__error" id="error-captcha" role="alert">Please complete the verification above.</span>
+          </div>
+
           <div class="form__submit-row">
             <button class="btn btn--primary" type="submit" data-form-submit>Send Enquiry</button>
             <span class="text-small text-muted">We reply <span data-site="responseTime">within 1 business day</span>.</span>
@@ -190,5 +195,9 @@
 <!-- include:footer -->
   <script src="assets/js/site-config.js"></script>
   <script src="assets/js/main.js" defer></script>
+  <!-- Web3Forms spam protection — injects the hCaptcha widget into the
+       .h-captcha div above using Web3Forms' shared free-plan sitekey.
+       Only loaded on this page, since it's the only one with the form. -->
+  <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>

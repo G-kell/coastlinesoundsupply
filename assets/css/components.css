@@ -691,6 +691,10 @@
   gap: var(--space-4);
 }
 
+.form__captcha {
+  margin-top: var(--space-2);
+}
+
 .form__status {
   margin-top: var(--space-6);
   padding: var(--space-4) var(--space-5);
