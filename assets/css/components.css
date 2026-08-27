@@ -109,6 +109,31 @@
   flex-shrink: 0;
 }
 
+/* Two logo files (light-background and dark-background variants) sit in
+   the markup together; only one is ever visible, following the same
+   system-preference / explicit-override rules as the colour tokens in
+   tokens.css. */
+.logo__mark--dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .logo__mark--light {
+    display: none;
+  }
+  :root:not([data-theme="light"]) .logo__mark--dark {
+    display: block;
+  }
+}
+
+:root[data-theme="dark"] .logo__mark--light {
+  display: none;
+}
+
+:root[data-theme="dark"] .logo__mark--dark {
+  display: block;
+}
+
 /* ----------------------------------------------------------------------------
    Site header / nav
    -------------------------------------------------------------------------- */
