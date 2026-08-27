@@ -101,27 +101,12 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  font-family: var(--font-heading);
-  font-weight: var(--weight-heading);
-  font-size: var(--text-h4);
-  letter-spacing: var(--tracking-display);
-  color: var(--color-text);
-}
-
-.logo:hover {
-  color: var(--color-text);
 }
 
 .logo__mark {
-  width: 2.25rem;
   height: 2.25rem;
+  width: auto;
   flex-shrink: 0;
-}
-
-.section--inverse .logo,
-.site-footer .logo {
-  color: var(--color-text-inverse);
 }
 
 /* ----------------------------------------------------------------------------
