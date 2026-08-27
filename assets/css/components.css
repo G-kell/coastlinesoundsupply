@@ -23,6 +23,7 @@
               border-color var(--transition-fast), box-shadow var(--transition-fast),
               transform var(--transition-fast);
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .btn:hover {
@@ -116,14 +117,6 @@
   width: 2.25rem;
   height: 2.25rem;
   flex-shrink: 0;
-}
-
-.logo__mark .logo__wave {
-  stroke: var(--color-brand);
-}
-
-.logo__mark .logo__sun {
-  fill: var(--color-accent);
 }
 
 .section--inverse .logo,
