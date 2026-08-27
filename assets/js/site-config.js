@@ -5,7 +5,7 @@
    page's HTML (search for data-site="..." attributes), so nothing breaks
    if JavaScript is disabled or fails to load. This file just overwrites
    those fallbacks with the same real values in one place, so you only
-   ever have to update a phone number or email address once.
+   ever have to update the email address once.
 
    PLACEHOLDER VALUES — replace before launch. See README.md, section
    "Before you launch", for the full checklist.
@@ -15,9 +15,8 @@ window.SITE_CONFIG = {
   businessName: "Coastline Sound Supply",
 
   // --- Contact -------------------------------------------------------------
+  // No phone number is published on the site by choice.
   email: "hello@coastlinesoundsupply.com",
-  phone: "+12505550142",                 // PLACEHOLDER — E.164 format, used for tel: links
-  phoneDisplay: "(250) 555-0142",        // PLACEHOLDER — human-readable, shown on the page
   instagramHandle: "@coastlinesoundsupply", // PLACEHOLDER
   instagramUrl: "https://instagram.com/coastlinesoundsupply", // PLACEHOLDER
 

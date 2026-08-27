@@ -367,8 +367,8 @@ and presents "Coastline Essentials includes X, Y, Z" as settled fact.
 **Every new schema block and `llms.txt` line above is written to
 reflect that these specifics are drafts** — but the real fix is
 finishing the [placeholder checklist](#before-you-launch--full-placeholder-checklist)
-(real package names/inclusions, real bios, real phone number) before
-this content is likely to see meaningful AI-crawler traffic.
+(real package names/inclusions, real bios, real Instagram handle)
+before this content is likely to see meaningful AI-crawler traffic.
 
 ---
 
@@ -393,12 +393,18 @@ value so a JS-disabled visitor sees the same thing.
 
 | What | File & line | Status |
 |---|---|---|
-| Email | `assets/js/site-config.js:18` | ✅ Real: `hello@coastlinesoundsupply.com` |
-| Phone (tel: link format) | `assets/js/site-config.js:19` | Placeholder: `+12505550142` |
-| Phone (human-readable) | `assets/js/site-config.js:20` | Placeholder: `(250) 555-0142` |
-| Instagram handle | `assets/js/site-config.js:21` | Placeholder: `@coastlinesoundsupply` |
-| Instagram URL | `assets/js/site-config.js:22` | Placeholder: `https://instagram.com/coastlinesoundsupply` |
-| Form endpoint | `assets/js/site-config.js:42` | Blank — see [Wiring up the enquiry form](#wiring-up-the-enquiry-form) |
+| Email | `assets/js/site-config.js:19` | ✅ Real: `hello@coastlinesoundsupply.com` |
+| Instagram handle | `assets/js/site-config.js:20` | Placeholder: `@coastlinesoundsupply` |
+| Instagram URL | `assets/js/site-config.js:21` | Placeholder: `https://instagram.com/coastlinesoundsupply` |
+| Form endpoint | `assets/js/site-config.js:42` | ✅ Real: wired up to Web3Forms |
+
+**No phone number is published on the site, by choice** — there's no
+`phone`/`phoneDisplay` field in `site-config.js` to fill in, and none
+appears anywhere on the site (footer, contact page, or structured
+data). If that ever changes, re-add both fields to `site-config.js`
+and a `data-site="phoneDisplay"` / `data-site-href="tel:{{phone}}"`
+pair wherever it should appear — following the same pattern email
+already uses.
 
 The same contact values also appear as plain hard-coded text inside
 **`src/partials/footer.html`** and **`src/pages/contact.html`**, as the
@@ -408,8 +414,8 @@ search the project for the old value to find every fallback instance to
 update too.
 
 Email is now wired up to `hello@coastlinesoundsupply.com`, forwarding to
-Gmail via ImprovMX (see DNS records for the `MX`/`TXT` setup) — phone and
-Instagram are still placeholders.
+Gmail via ImprovMX (see DNS records for the `MX`/`TXT` setup) — Instagram
+is still a placeholder. No phone number is published, by choice.
 
 ### Domain name
 
