@@ -44,9 +44,23 @@
   margin-bottom: var(--space-10);
 }
 
+/* Wider than the reading measure so a heading like "Why venues &
+   organizers book us" stays on one line at desktop widths instead of
+   dropping a single orphaned word. Paragraphs inside stay capped at the
+   measure by the global p rule, so they need centring explicitly. */
 .section__header--center {
+  max-width: 48rem;
   margin-inline: auto;
   text-align: center;
+}
+
+.section__header--center p {
+  margin-inline: auto;
+}
+
+/* Even out any wrap that does happen, at narrower widths. */
+.section__header h2 {
+  text-wrap: balance;
 }
 
 .stack > * + * {

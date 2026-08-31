@@ -19,6 +19,7 @@ window.SITE_CONFIG = {
   email: "hello@coastlinesoundsupply.com",
   instagramHandle: "@coastlinesoundsupply", // PLACEHOLDER
   instagramUrl: "https://instagram.com/coastlinesoundsupply", // PLACEHOLDER
+  soundcloudUrl: "https://soundcloud.com/coastline-sound-supply",
 
   responseTime: "within 1 business day",
 

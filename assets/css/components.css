@@ -134,6 +134,35 @@
   display: block;
 }
 
+/* The footer sits on the inverse surface in both themes, so it needs the
+   opposite variant to the header: dark-background artwork in light mode,
+   light-background artwork in dark mode. Each rule below repeats the
+   :root prefix of the rule it overrides so the specificity still wins. */
+.site-footer .logo__mark--light {
+  display: none;
+}
+
+.site-footer .logo__mark--dark {
+  display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .site-footer .logo__mark--light {
+    display: block;
+  }
+  :root:not([data-theme="light"]) .site-footer .logo__mark--dark {
+    display: none;
+  }
+}
+
+:root[data-theme="dark"] .site-footer .logo__mark--light {
+  display: block;
+}
+
+:root[data-theme="dark"] .site-footer .logo__mark--dark {
+  display: none;
+}
+
 /* ----------------------------------------------------------------------------
    Site header / nav
    -------------------------------------------------------------------------- */
@@ -440,6 +469,10 @@
   padding: var(--space-6);
 }
 
+.strip__item .card__title + p {
+  margin-top: var(--space-2);
+}
+
 .strip__icon {
   width: 3rem;
   height: 3rem;
@@ -464,6 +497,10 @@
   gap: var(--space-4);
 }
 
+.trust__item .card__title + p {
+  margin-top: var(--space-2);
+}
+
 .trust__icon {
   width: 2.5rem;
   height: 2.5rem;
@@ -484,6 +521,13 @@
 
 .cta-band h2 {
   color: var(--color-text-inverse);
+}
+
+/* Paragraphs are capped at the reading measure globally, which leaves the
+   text box flush-left inside a wider centred card — centre the box itself
+   so the centred text actually reads as centred. */
+.cta-band p {
+  margin-inline: auto;
 }
 
 .cta-band__actions {
@@ -514,6 +558,22 @@
 /* ----------------------------------------------------------------------------
    Placeholder photo / avatar
    -------------------------------------------------------------------------- */
+/* Real photography — the counterpart to .placeholder-photo below. Same
+   rounded frame and aspect-ratio modifiers, but the image fills the box
+   and crops to it rather than letterboxing. */
+.media {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius-image);
+}
+
+.media--16x9 { aspect-ratio: 16 / 9; }
+.media--4x5  { aspect-ratio: 4 / 5; }
+.media--1x1  { aspect-ratio: 1 / 1; }
+.media--3x2  { aspect-ratio: 3 / 2; }
+
 .placeholder-photo {
   position: relative;
   display: flex;

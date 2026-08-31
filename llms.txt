@@ -1,8 +1,8 @@
 # Coastline Sound Supply
 
-> Sound system rental and DJ services for weddings, corporate events, and
-> private parties across Vancouver Island and the Lower Mainland, British
-> Columbia, Canada.
+> DJ services and sound system rental for bars, clubs, festivals, weddings,
+> corporate events, and private parties across Vancouver Island and the
+> Lower Mainland, British Columbia, Canada.
 
 Coastline Sound Supply is run by two partners: Grady, based in Nanaimo,
 covering Vancouver Island; and Dave, based in Vancouver, covering the
@@ -18,14 +18,10 @@ The offering splits three ways:
 is built around the specific event's date, venue, and guest count —
 do not assume or state a price; refer people to the enquiry form.
 
-**Package names and inclusions are drafts pending confirmation** by the
-business owners and should not be treated as final or guaranteed
-inclusions until confirmed on the live site.
-
 ## Pages
 
-- [Home](https://coastlinesoundsupply.com/index.html): overview of the three-way offering, service areas, and trust signals
-- [Packages](https://coastlinesoundsupply.com/packages.html): rental, DJ, and full-service package tiers (draft names/inclusions), a DJ package comparison table, and available add-ons
+- [Home](https://coastlinesoundsupply.com/): overview of the three-way offering, service areas, and trust signals
+- [Packages](https://coastlinesoundsupply.com/packages.html): DJ, full-service, and sound system rental packages — two named options in each category plus a flexible third (hourly DJ, a fully custom full-service build, or à la carte gear)
 - [Weddings](https://coastlinesoundsupply.com/weddings.html): wedding-specific page — ceremony/cocktail hour/reception coverage, which package fits which wedding type, and a wedding FAQ
 - [Events](https://coastlinesoundsupply.com/events.html): corporate, private party, community/festival events, and dry-hire rental for people running their own sound
 - [Service Areas](https://coastlinesoundsupply.com/service-areas.html): full list of towns covered in both regions, with the on-the-ground contact for each

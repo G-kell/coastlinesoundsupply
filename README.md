@@ -179,7 +179,7 @@ requests.
 ## How to add a package
 
 Open `src/pages/packages.html`. Packages are grouped into three
-sections — Rental, DJ, and Full-Service — each a row of `.card`
+sections — DJ, Full-Service, and Rental — each a row of `.card`
 elements. To add one:
 
 1. Copy an existing `<div class="card">...</div>` block in the section
@@ -190,11 +190,13 @@ elements. To add one:
    `contact.html?package=Your%20Package%20Name` (spaces become `%20`) —
    this pre-fills the "Package of interest" field on the contact form
    automatically.
-4. If it's a DJ package, also add a matching column to the comparison
-   table further down the same page.
-5. Keep the `<span class="badge badge--draft">Draft</span>` on it (or
-   remove it once you've confirmed the real inclusions).
-6. Rebuild (`python3 scripts/build.py`) to see it in `dist/`.
+4. Rebuild (`python3 scripts/build.py`) to see it in `dist/`.
+
+Each of the three sections currently holds two named packages plus a
+flexible third option (À la carte, Hourly, and Custom). Those third
+cards deliberately have no fixed inclusions — if you add a named
+package, add it alongside the two named ones and leave the flexible
+card last in its row.
 
 All current packages are placeholder names and inclusions — see the
 checklist below.
@@ -361,14 +363,15 @@ AI agents that plan or compare vendors on someone's behalf:
 Structured data and `llms.txt` are far "stickier" than regular on-page
 text: an AI system can cache, embed, or quote these facts to an end
 user long after the real site changes, without necessarily re-crawling
-first. A human visitor sees the `Draft` badge on a package card and
-understands the context; an AI summarizer typically strips that framing
-and presents "Coastline Essentials includes X, Y, Z" as settled fact.
-**Every new schema block and `llms.txt` line above is written to
-reflect that these specifics are drafts** — but the real fix is
-finishing the [placeholder checklist](#before-you-launch--full-placeholder-checklist)
-(real package names/inclusions, real bios, real Instagram handle)
-before this content is likely to see meaningful AI-crawler traffic.
+first, and an AI summarizer strips any framing a human reader would
+pick up on — presenting "Coastline Essentials includes X, Y, Z" as
+settled fact. The package names, inclusions, and hours are confirmed,
+so that is now accurate; **treat any edit to them as publishing a
+commitment**, since it may be quoted back long after you change it.
+Anything still unconfirmed — see the
+[placeholder checklist](#before-you-launch--full-placeholder-checklist)
+(real bios, real Instagram handle) — should keep its in-page draft
+marker until it is settled.
 
 ---
 
@@ -396,6 +399,7 @@ value so a JS-disabled visitor sees the same thing.
 | Email | `assets/js/site-config.js:19` | ✅ Real: `hello@coastlinesoundsupply.com` |
 | Instagram handle | `assets/js/site-config.js:20` | Placeholder: `@coastlinesoundsupply` |
 | Instagram URL | `assets/js/site-config.js:21` | Placeholder: `https://instagram.com/coastlinesoundsupply` |
+| SoundCloud URL | `assets/js/site-config.js:22` | ✅ Real: `https://soundcloud.com/coastline-sound-supply` |
 | Form endpoint | `assets/js/site-config.js:42` | ✅ Real: wired up to Web3Forms |
 
 **No phone number is published on the site, by choice** — there's no
@@ -460,7 +464,6 @@ match, so nothing shifts on load):
 
 | Page & line | What it should show |
 |---|---|
-| `src/pages/index.html:102` | DJ booth & dance floor lighting, outdoor reception at dusk |
 | `src/pages/index.html:238` | *(testimonials block — replace once you have client quotes)* |
 | `src/pages/weddings.html:40` | Bride & groom exchanging vows, outdoor ceremony, wireless mic visible |
 | `src/pages/events.html:40` | Corporate conference stage with presenter mic |
@@ -473,23 +476,25 @@ initial-only avatar placeholders (`G` and `D`) instead of real
 headshots. Replace the `<div class="avatar-placeholder">` elements with
 real `<img>` photos of Grady and Dave.
 
-### Draft bios & package copy
+### Draft bios
 
 - `src/pages/about.html:45` and `src/pages/about.html:53` — Grady's and
   Dave's bios are reasonable-sounding drafts, but the specifics (years
   active, notable venues, certifications) are invented and marked
-  in-page as needing confirmation.
-- `src/pages/packages.html` — **every package name, inclusion list, and
-  hour count is a placeholder**, marked with a `Draft` badge. Confirm
-  real gear lists, hours, and (if you decide to publish them) prices
-  with Grady and Dave before launch. No prices are shown anywhere on the
-  site currently, by design.
+  in-page as needing confirmation. These are still outstanding.
+
+Package copy is **no longer a placeholder**: the names, inclusions, and
+hours on `src/pages/packages.html` are confirmed, and the `Draft` badges
+have been removed from the page, its structured data, the footer, and
+`llms.txt`. Prices remain unpublished everywhere, by design.
 
 ### Everything else
 
 Search the project for the word `PLACEHOLDER` (all caps) to catch a few
-smaller inline notes not listed above, and for `Draft` to find every
-in-page draft badge.
+smaller inline notes not listed above. Searching for `Draft` now turns
+up only the two `about.html` bio notes and the component swatch on
+`styleguide.html` (an internal page, not in the nav, footer, or
+`sitemap.xml`) — no live page content is marked draft any more.
 
 ---
 
