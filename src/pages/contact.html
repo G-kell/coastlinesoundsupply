@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact &amp; Get a Quote | Coastline Sound Supply</title>
-  <meta name="description" content="Request a quote for DJ services, sound system rental, or both. Tell us your date, venue, and guest count — we typically reply within 1 business day.">
+  <meta name="description" content="Tell us about your event — a wedding, a DJ night, or a sound system rental. Date, venue, and guest count help us quote it; we typically reply within 1 business day.">
   <link rel="canonical" href="https://coastlinesoundsupply.com/contact.html">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Coastline Sound Supply">
@@ -55,7 +55,7 @@
     <section class="hero" style="padding-bottom: var(--space-8);">
       <div class="container container--narrow" style="text-align: center;">
         <h1>Get a Quote</h1>
-        <p class="text-lead">Tell us about your event. Only your name and a way to reach you are required — everything else helps us put together a more accurate quote.</p>
+        <p class="text-lead">Tell us about your event. Only your name and a way to reach you are required — the rest is what we'd otherwise ask in our first reply, so filling it in gets you to options faster.</p>
       </div>
     </section>
 
@@ -106,11 +106,10 @@
               <label class="form__label" for="field-event-type">Event type</label>
               <select class="form__select" id="field-event-type" name="event_type">
                 <option value="">Select one</option>
-                <option value="Corporate">Corporate</option>
-                <option value="Private party">Private party</option>
                 <option value="Wedding">Wedding</option>
-                <option value="Community / non-profit">Community / non-profit</option>
-                <option value="Other">Other</option>
+                <option value="DJ event">DJ event (bar, brewery, corporate, private)</option>
+                <option value="Equipment rental">Equipment rental</option>
+                <option value="Not sure">Not sure yet</option>
               </select>
             </div>
             <div class="form__field">
@@ -118,7 +117,7 @@
               <select class="form__select" id="field-region" name="region">
                 <option value="">Select one</option>
                 <option value="Vancouver Island">Vancouver Island</option>
-                <option value="Lower Mainland">Lower Mainland</option>
+                <option value="Lower Mainland">Lower Mainland &amp; Sea-to-Sky</option>
                 <option value="Other">Other / not sure</option>
               </select>
             </div>
@@ -126,8 +125,8 @@
 
           <div class="form__row form__row--2">
             <div class="form__field">
-              <label class="form__label" for="field-venue">Venue or town</label>
-              <input class="form__input" type="text" id="field-venue" name="venue">
+              <label class="form__label" for="field-venue">Venue and town</label>
+              <input class="form__input" type="text" id="field-venue" name="venue" placeholder="e.g. The barn at …, Nanoose Bay">
             </div>
             <div class="form__field">
               <label class="form__label" for="field-guests">Guest count</label>
@@ -135,15 +134,27 @@
             </div>
           </div>
 
+          <div class="form__row form__row--2">
+            <div class="form__field">
+              <label class="form__label" for="field-start-time">Start time</label>
+              <input class="form__input" type="time" id="field-start-time" name="start_time">
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="field-end-time">End time</label>
+              <input class="form__input" type="time" id="field-end-time" name="end_time">
+              <span class="form__hint">Rough is fine — we'll settle the timing together.</span>
+            </div>
+          </div>
+
           <div class="form__row">
             <div class="form__field">
-              <span class="form__label">Services interested in</span>
-              <div class="form__checkbox-group" role="group" aria-label="Services interested in">
+              <span class="form__label">What do you need?</span>
+              <div class="form__checkbox-group" role="group" aria-label="What do you need">
                 <label class="form__checkbox">
-                  <input type="radio" name="services" value="DJ"> DJ services
+                  <input type="radio" name="services" value="DJ"> A DJ
                 </label>
                 <label class="form__checkbox">
-                  <input type="radio" name="services" value="Rental"> Sound rental
+                  <input type="radio" name="services" value="Sound equipment"> Sound equipment
                 </label>
                 <label class="form__checkbox">
                   <input type="radio" name="services" value="Both"> Both
@@ -152,18 +163,46 @@
             </div>
           </div>
 
+          <div class="form__row form__row--2">
+            <div class="form__field">
+              <label class="form__label" for="field-spaces">Ceremony, cocktails, and reception</label>
+              <select class="form__select" id="field-spaces" name="spaces">
+                <option value="">Select one (weddings)</option>
+                <option value="Same space">All in the same space</option>
+                <option value="Different spaces">In different spaces</option>
+                <option value="Not sure">Not sure yet</option>
+              </select>
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="field-venue-sound">Does the venue have its own sound system?</label>
+              <select class="form__select" id="field-venue-sound" name="venue_sound">
+                <option value="">Select one</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                <option value="Not sure">Not sure</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="form__field">
+              <label class="form__label" for="field-vibe">The music or vibe you're after</label>
+              <textarea class="form__textarea" id="field-vibe" name="music_vibe" placeholder="A packed dance floor? A lounge set over dinner? Artists or genres you love, or a playlist that sums it up?"></textarea>
+            </div>
+          </div>
+
           <div class="form__row">
             <div class="form__field">
               <label class="form__label" for="field-package">Package of interest</label>
-              <input class="form__input" type="text" id="field-package" name="package" placeholder="e.g. Coastline Complete">
+              <input class="form__input" type="text" id="field-package" name="package" placeholder="e.g. Full wedding day, Medium PA">
               <span class="form__hint">Pre-filled automatically if you arrived from a package page.</span>
             </div>
           </div>
 
           <div class="form__row">
             <div class="form__field">
-              <label class="form__label" for="field-message">Message</label>
-              <textarea class="form__textarea" id="field-message" name="message" placeholder="Anything else we should know — timeline, venue restrictions, must-play songs?"></textarea>
+              <label class="form__label" for="field-message">Anything else?</label>
+              <textarea class="form__textarea" id="field-message" name="message" placeholder="Venue restrictions, outdoor spaces, no power nearby, a planner we should talk to…"></textarea>
             </div>
           </div>
 
@@ -187,7 +226,46 @@
       </div>
     </section>
 
-    <section class="section section--sunken">
+    <section class="section section--sunken" id="how-booking-works">
+      <div class="container container--narrow">
+        <div class="section__header">
+          <h2>How booking works</h2>
+          <p class="text-lead">No pressure, no obligation at any step.</p>
+        </div>
+        <div class="grid grid--2">
+          <div class="card">
+            <div class="card__body">
+              <span class="text-caption">Step 1</span>
+              <h3 class="card__title">Tell us about the event</h3>
+              <p class="text-muted">The form above, or an email. Whatever you know so far is enough to start.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__body">
+              <span class="text-caption">Step 2</span>
+              <h3 class="card__title">We reply with a few questions</h3>
+              <p class="text-muted">The spaces and layout, whether the venue has its own sound, the timing, and the vibe you're after.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__body">
+              <span class="text-caption">Step 3</span>
+              <h3 class="card__title">Options, then a quote</h3>
+              <p class="text-muted">We send a few options for how much we cover, and a quote once the details are set.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__body">
+              <span class="text-caption">Step 4</span>
+              <h3 class="card__title">A signed agreement holds the date</h3>
+              <p class="text-muted">A signed agreement and a non-refundable deposit confirm the booking. Until then, the date isn't held.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="container">
         <div class="section__header section__header--center">
           <h2>Other ways to reach us</h2>
