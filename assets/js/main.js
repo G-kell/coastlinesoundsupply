@@ -312,12 +312,66 @@
     }
   }
 
+  /* Prefill from the query string. A CTA elsewhere on the site can pass
+     what it already knows (contact.html?event_type=Wedding&source=weddings-hero)
+     so the visitor isn't asked again: the matching field is filled and its
+     wrapper hidden, but it still submits with the form. Unknown values for a
+     <select> are ignored (the field stays visible). "source" and "package"
+     go into hidden inputs and only ever show up in the email. */
   function prefillFromQueryString(form) {
+    if (!window.location.search) return;
     var params = new URLSearchParams(window.location.search);
-    var packageParam = params.get("package");
-    if (!packageParam) return;
 
-    var field = form.querySelector("#field-package");
-    if (field) field.value = packageParam;
+    var eventType = setAndHide(form, "#field-event-type", params.get("event_type"));
+    setAndHide(form, "#field-venue-sound", params.get("venue_sound"));
+
+    // Package is a hidden input: only ever set from a package card's link.
+    var packageParam = params.get("package");
+    var packageField = form.querySelector("#field-package");
+    if (packageParam && packageField) packageField.value = packageParam.slice(0, 80);
+
+    var services = params.get("services");
+    if (services) {
+      var radio = form.querySelector("input[name='services'][value='" + cssEscape(services) + "']");
+      if (radio) {
+        radio.checked = true;
+        hideField(radio.closest(".form__field"));
+      }
+    }
+
+    // The spaces question only applies to weddings.
+    if (eventType && eventType !== "Wedding") {
+      var spaces = form.querySelector("#field-spaces");
+      if (spaces) hideField(spaces.closest(".form__field"));
+    }
+
+    var source = params.get("source");
+    var sourceField = form.querySelector("#field-source");
+    if (source && sourceField) sourceField.value = source.slice(0, 80);
+
+    var subject = form.querySelector("input[name='subject']");
+    if (eventType && subject) {
+      subject.value = "New enquiry (" + eventType + ") — Coastline Sound Supply";
+    }
+  }
+
+  // Sets a field's value from a query param and hides it. For a <select>,
+  // only an existing option can be selected; returns the applied value or null.
+  function setAndHide(form, selector, value) {
+    if (!value) return null;
+    var field = form.querySelector(selector);
+    if (!field) return null;
+    field.value = value;
+    if (field.value !== value) return null;
+    hideField(field.closest(".form__field"));
+    return value;
+  }
+
+  function hideField(wrap) {
+    if (wrap) wrap.hidden = true;
+  }
+
+  function cssEscape(value) {
+    return window.CSS && CSS.escape ? CSS.escape(value) : value.replace(/["'\\]/g, "\\$&");
   }
 })();

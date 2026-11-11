@@ -68,6 +68,13 @@
                you ever need to change where submissions go. -->
           <input type="hidden" name="access_key" value="9b150eac-aa2c-471e-82ed-f92630278ab6">
           <input type="hidden" name="subject" value="New enquiry — Coastline Sound Supply">
+          <!-- Which page / button the visitor came from. Filled from the
+               ?source= query parameter by main.js; never shown to the visitor,
+               but included in the email so we know what they were looking at. -->
+          <input type="hidden" name="source" id="field-source" value="">
+          <!-- Package card the visitor clicked, if any (?package=). Hidden for
+               the same reason: it's context for us, not a question for them. -->
+          <input type="hidden" name="package" id="field-package" value="">
 
           <!-- Honeypot — hidden from real visitors, left blank by them; a
                filled value means a bot submitted the form. -->
@@ -188,14 +195,6 @@
             <div class="form__field">
               <label class="form__label" for="field-vibe">The music or vibe you're after</label>
               <textarea class="form__textarea" id="field-vibe" name="music_vibe" placeholder="A packed dance floor? A lounge set over dinner? Artists or genres you love, or a playlist that sums it up?"></textarea>
-            </div>
-          </div>
-
-          <div class="form__row">
-            <div class="form__field">
-              <label class="form__label" for="field-package">Package of interest</label>
-              <input class="form__input" type="text" id="field-package" name="package" placeholder="e.g. Full wedding day, Medium PA">
-              <span class="form__hint">Pre-filled automatically if you arrived from a package page.</span>
             </div>
           </div>
 

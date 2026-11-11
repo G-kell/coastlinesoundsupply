@@ -186,20 +186,21 @@ elements. To add one:
    you want (Rental, DJ, or Full-Service).
 2. Change the heading, the "Best for" line, and the bullet list inside
    `<ul class="card__list">`.
-3. Update the "Request a quote" link's `href` to
-   `contact.html?package=Your%20Package%20Name` (spaces become `%20`) —
-   this pre-fills the "Package of interest" field on the contact form
-   automatically.
+3. Update the "Request a quote" link's `href`. Each card link carries
+   what we already know about the visitor as query parameters, e.g.
+   `contact.html?event_type=Wedding&package=Your%20Package%20Name&source=packages`
+   (spaces become `%20`). `main.js` reads them on the contact page: a
+   matching visible field (`event_type`, `services`, `venue_sound`) is
+   filled and hidden so the visitor isn't asked again, while `package`
+   and `source` go into hidden inputs. All of it still arrives in the
+   email. For the two DJ-event cards, pass `venue_sound=Yes` or `No`
+   instead of a package name.
 4. Rebuild (`python3 scripts/build.py`) to see it in `dist/`.
 
-Each of the three sections currently holds two named packages plus a
-flexible third option (À la carte, Hourly, and Custom). Those third
-cards deliberately have no fixed inclusions — if you add a named
-package, add it alongside the two named ones and leave the flexible
-card last in its row.
-
-All current packages are placeholder names and inclusions — see the
-checklist below.
+The page has three sections: DJ events (two cards, by whether the venue
+has its own sound), Wedding packages (Reception, Full wedding day,
+Ceremony sound) and Sound system rental (Small, Medium, Large PA). Hours
+and prices are deliberately not listed on any card.
 
 ## How to add a service area town
 
